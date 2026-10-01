@@ -183,7 +183,7 @@ class GeoScene():
 		dy = y - self.crsy
 		self.setOriginPrj(x, y, synch)
 		if updObjLoc:
-			self._moveObjLoc(dx, dy)
+			self._moveObjLoc(dx / self.scale, dy / self.scale)
 
 
 	def updOriginGeo(self, lon, lat, updObjLoc=True):
