@@ -106,10 +106,10 @@ class GeoScene():
 			raise Exception("Scene origin coordinate is unset")
 
 	def projToView3d(self, dx, dy):
-		'''Convert view3d coords to crs coords'''
+		'''Convert CRS coordinates to view3d coordinates'''
 		if self.hasOriginPrj:
-			x = (dx * self.scale) - self.crsx
-			y = (dy * self.scale) - self.crsy
+			x = (dx - self.crsx) / self.scale
+			y = (dy - self.crsy) / self.scale
 			return x, y
 		else:
 			raise Exception("Scene origin coordinate is unset")
